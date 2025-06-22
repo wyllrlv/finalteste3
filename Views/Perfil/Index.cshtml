@@ -1,0 +1,104 @@
+﻿@model puc_projeto_eixo_2.Models.PerfilViewModel
+
+@{
+    ViewData["Title"] = "Perfil";
+}
+
+@section Styles {
+    <link rel="stylesheet" href="~/css/perfil.css" asp-append-version="true" />
+}
+
+@if (TempData["MensagemSucesso"] != null)
+{
+    <div style="background-color: green; color: white; padding: 10px; border-radius: 5px; margin: 15px auto; text-align: center; max-width: 400px;">
+        @TempData["MensagemSucesso"]
+    </div>
+}
+
+<section>
+    <main>
+        <div class="div-banner-perfil">
+            <div class="logo-slogan-buttons">
+                <img class="foto-perfil"
+                     src="@(string.IsNullOrEmpty(Model.Usuario.FotoPerfil) ? "/img/foto-inexistente.png" : Model.Usuario.FotoPerfil)"
+                     alt="foto de perfil">
+                <div class="info-usuario">
+                    <h2 style="color: var(--primary); margin-top: 60px;">@Model.Usuario.Nome</h2>
+                    <p style="color: var(--text); font-size: 1rem;">@@@Model.Usuario.NomeDeUsuario</p>
+                    <p style="color: var(--text); font-size: 0.9rem;">@Model.Usuario.Cidade, @Model.Usuario.Estado</p>
+                </div>
+            </div>
+
+            @if (Model.IsProprietario)
+            {
+                <div class="acoes-perfil">
+                    <a asp-action="Editar" class="button-geral button-entrar">Editar Perfil</a>
+                </div>
+            }
+        </div>
+
+        <div class="div-meus-treinos">
+            <h2>@(Model.IsProprietario ? "Meus treinos" : "Treinos criados")</h2>
+
+            @if (Model.TreinosCriados.Any())
+            {
+                <div class="meus-treinos-boxs">
+                    @foreach (var treino in Model.TreinosCriados)
+                    {
+                        <div class="div-box-meus-treinos-info">
+                            <div class="box-meus-treinos">
+                                <div class="treino-preview">
+                                    <h4>@treino.Titulo</h4>
+                                </div>
+                            </div>
+                            <div class="info-treino">
+                                <h3 class="titulo-treino">
+                                    <span>
+                                        <a asp-controller="Treinos" asp-action="Details" asp-route-id="@treino.Id">
+                                            @treino.Titulo
+                                        </a>
+                                    </span>
+                                </h3>
+                                <p class="criador-treino"><span>Criado por: @treino.Usuario.Nome</span></p>
+                                <p class="avaliacao-treino">
+                                    <span>
+                                        Avaliação:
+                                        @for (int i = 1; i <= 5; i++)
+                                        {
+                                            if (i <= treino.Avaliacao)
+                                            {
+                                                <text>⭐</text>
+                                            }
+                                            else
+                                            {
+                                                <text>☆</text>
+                                            }
+                                        }
+                                    </span>
+                                </p>
+                            </div>
+                        </div>
+                    }
+                </div>
+            }
+            else
+            {
+                <p style="color: var(--text); text-align: center; margin-top: 20px;">
+                    @(Model.IsProprietario ? "Você ainda não criou nenhum treino." : "Este usuário não criou nenhum treino ainda.")
+                </p>
+                @if (Model.IsProprietario)
+                {
+                    <div style="text-align: center; margin-top: 15px;">
+                        <a asp-controller="Treinos" asp-action="Create" class="button-geral button-criar">Criar Primeiro Treino</a>
+                    </div>
+                }
+            }
+        </div>
+    </main>
+</section>
+
+<section>
+    <footer class="footer">
+        <span>GymFlow - @DateTime.Now.Year</span>
+    </footer>
+</section>

@@ -1,0 +1,171 @@
+﻿/* ========== Estilos para formulário de edição de perfil ========== */
+
+.form-group {
+    margin-bottom: 15px;
+}
+
+    .form-group label {
+        display: block;
+        margin-bottom: 5px;
+        font-size: 0.9rem;
+        color: var(--color-button-inscrever);
+        font-weight: 500;
+    }
+
+.form-control,
+select,
+input[type="date"] {
+    color: var(--color-button-inscrever) !important;
+    background-color: #1a112c !important;
+    border: 1px solid var(--secondary) !important;
+    padding: 12px !important;
+    border-radius: 6px !important;
+    width: 100% !important;
+    font-family: inherit !important;
+    font-size: 1rem !important;
+    transition: all 0.3s ease !important;
+    box-sizing: border-box !important;
+}
+
+    .form-control:focus,
+    .form-control:valid,
+    select:focus,
+    select:valid,
+    input[type="date"]:focus,
+    input[type="date"]:valid {
+        color: white !important;
+        border-color: var(--primary) !important;
+        box-shadow: 0 0 0 2px rgba(255, 92, 34, 0.2) !important;
+        outline: none !important;
+    }
+
+    .form-control::placeholder {
+        color: var(--color-button-inscrever) !important;
+        opacity: 0.8 !important;
+    }
+
+    select option {
+        color: black !important;
+        background-color: white !important;
+    }
+
+.button-submit-form {
+    background-color: var(--bg-button-inscrever) !important;
+    color: var(--color-button-inscrever) !important;
+    border: none !important;
+    border-radius: 8px !important;
+    padding: 12px 20px !important;
+    font-size: 1rem !important;
+    font-weight: bold !important;
+    cursor: pointer !important;
+    transition: all 0.3s ease !important;
+    width: 100% !important;
+    margin-top: 20px !important;
+}
+
+    .button-submit-form:hover {
+        background-color: var(--primary) !important;
+        transform: scale(1.02) !important;
+    }
+
+    .button-submit-form:active {
+        transform: scale(0.98) !important;
+        background-color: var(--primary) !important;
+    }
+
+/* ========== Foto de perfil ========== */
+.profile-photo-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 15px;
+    margin: 20px 0 30px 0;
+}
+
+.profile-photo {
+    width: 120px;
+    height: 120px;
+    border-radius: 50%;
+    object-fit: cover;
+    border: 3px solid var(--secondary);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+    transition: transform 0.3s ease;
+}
+
+    .profile-photo:hover {
+        transform: scale(1.05);
+    }
+
+.button-trocar-foto {
+    background-color: var(--bg-button-inscrever) !important;
+    color: var(--color-button-inscrever) !important;
+    padding: 8px 16px !important;
+    border-radius: 6px !important;
+    cursor: pointer !important;
+    font-weight: bold !important;
+    transition: all 0.3s ease !important;
+    text-align: center !important;
+    border: none !important;
+    font-size: 0.9rem !important;
+}
+
+    .button-trocar-foto:hover {
+        background-color: var(--primary) !important;
+        transform: scale(1.03) !important;
+    }
+
+/* ========== Validação ========== */
+.text-danger {
+    color: #ff6b6b !important;
+    font-size: 0.85rem !important;
+    margin-top: 5px !important;
+    display: block !important;
+}
+
+.field-validation-error {
+    color: #ff6b6b !important;
+    font-size: 0.85rem !important;
+}
+
+.input-validation-error {
+    border-color: #ff6b6b !important;
+    box-shadow: 0 0 0 2px rgba(255, 107, 107, 0.2) !important;
+}
+
+/* ========== Responsividade ========== */
+@media (max-width: 768px) {
+    .div-form {
+        max-width: 90% !important;
+        margin: 20px auto !important;
+        padding: 15px !important;
+    }
+
+    .profile-photo {
+        width: 100px;
+        height: 100px;
+    }
+
+    .form-control,
+    select,
+    input[type="date"] {
+        padding: 10px !important;
+        font-size: 0.9rem !important;
+    }
+}
+
+@media (max-width: 480px) {
+    .div-form {
+        max-width: 95% !important;
+        padding: 10px !important;
+    }
+
+    .profile-photo {
+        width: 80px;
+        height: 80px;
+    }
+
+    .button-submit-form {
+        padding: 10px 15px !important;
+        font-size: 0.9rem !important;
+    }
+}

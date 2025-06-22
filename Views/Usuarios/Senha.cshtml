@@ -1,0 +1,14 @@
+﻿@{
+    ViewBag.Title = "Protegido por Senha";
+}
+
+<h2>Senha</h2>
+
+<form method="post" action="/Usuarios/VerificarSenha">
+    <input type="password" name="senhaDigitada" placeholder="Senha" Required />
+</form>
+
+@if (ViewBag.Erro != null)
+{
+    <p style="color: white">@ViewBag.Erro</p>
+}

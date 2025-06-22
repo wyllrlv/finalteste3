@@ -1,0 +1,16 @@
+﻿@{
+    ViewData["Title"] = "Teste Mensagem";
+}
+
+<h2>Teste Mensagem</h2>
+
+@if (TempData["MensagemLogin"] != null)
+{
+    <div style="background-color: green; color: white; padding: 10px; border-radius: 5px; margin: 15px auto; text-align: center; max-width: 400px;">
+        @TempData["MensagemLogin"]
+    </div>
+}
+else
+{
+    <p>Nenhuma mensagem foi passada.</p>
+}

@@ -1,0 +1,192 @@
+﻿/* ========== Foto de perfil e banner ========== */
+.div-banner-perfil {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 240px;
+    max-height: 240px;
+    background: linear-gradient(135deg, var(--secondary), var(--primary));
+    position: relative;
+    border-radius: 15px;
+    padding: 20px;
+    margin-bottom: 60px;
+}
+
+.logo-slogan-buttons {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+}
+
+.foto-perfil {
+    width: 120px;
+    height: 120px;
+    border-radius: 50%;
+    object-fit: cover;
+    border: 4px solid white;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+}
+
+.info-usuario h2 {
+    margin: 0 0 5px 0;
+    font-size: 1.5rem;
+}
+
+.info-usuario p {
+    margin: 2px 0;
+    opacity: 0.9;
+}
+
+.acoes-perfil {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+/* ========== Meus treinos ========== */
+.titulo-treino span,
+.criador-treino span,
+.avaliacao-treino span {
+    font-size: 0.8rem;
+    color: var(--text);
+}
+
+.titulo-treino a {
+    color: var(--primary);
+    text-decoration: none;
+    font-weight: bold;
+}
+
+    .titulo-treino a:hover {
+        text-decoration: underline;
+    }
+
+.div-meus-treinos {
+    margin-top: 30px;
+}
+
+    .div-meus-treinos h2 {
+        margin-bottom: 20px;
+        color: var(--text);
+        font-size: 1.5rem;
+    }
+
+.box-meus-treinos {
+    width: 180px;
+    height: 120px;
+    margin: 5px;
+    border: 2px solid var(--primary);
+    border-radius: 8px;
+    background: linear-gradient(135deg, var(--secondary), var(--primary));
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    overflow: hidden;
+}
+
+.treino-preview {
+    text-align: center;
+    color: white;
+    font-weight: bold;
+}
+
+    .treino-preview h4 {
+        margin: 0;
+        font-size: 0.9rem;
+        text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.7);
+    }
+
+.div-box-meus-treinos-info {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin: 10px;
+    transition: transform 0.2s ease;
+}
+
+    .div-box-meus-treinos-info:hover {
+        transform: translateY(-5px);
+    }
+
+.info-treino {
+    margin-top: 10px;
+    text-align: center;
+    width: 180px;
+}
+
+    .info-treino h3 {
+        margin: 5px 0;
+        font-size: 1rem;
+    }
+
+    .info-treino p {
+        margin: 3px 0;
+        font-size: 0.8rem;
+    }
+
+.meus-treinos-boxs {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 15px;
+    justify-content: flex-start;
+}
+
+/* ========== Footer ========== */
+.footer {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-top: 50px;
+    padding: 20px;
+    border-top: 1px solid var(--secondary);
+}
+
+    .footer span {
+        font-size: 0.9rem;
+        color: var(--text);
+        opacity: 0.7;
+    }
+
+/* ========== Media Query ========== */
+@media (max-width: 768px) {
+    .div-banner-perfil {
+        flex-direction: column;
+        height: auto;
+        padding: 20px;
+        text-align: center;
+    }
+
+    .logo-slogan-buttons {
+        flex-direction: column;
+        gap: 15px;
+    }
+
+    .acoes-perfil {
+        margin-top: 15px;
+    }
+
+    .meus-treinos-boxs {
+        justify-content: center;
+    }
+}
+
+@media (max-width: 480px) {
+    .foto-perfil {
+        width: 100px;
+        height: 100px;
+    }
+
+    .info-usuario h2 {
+        font-size: 1.3rem;
+    }
+
+    .box-meus-treinos {
+        width: 150px;
+        height: 100px;
+    }
+
+    .info-treino {
+        width: 150px;
+    }
+}

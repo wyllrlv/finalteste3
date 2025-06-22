@@ -1,0 +1,53 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>@ViewData["Title"] - GymFlow</title>
+    <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="/css/index.css" asp-append-version="true" />
+    <link rel="stylesheet" href="/css/root.css" asp-append-version="true" />
+    @await RenderSectionAsync("Styles", required: false)
+</head>
+
+<body>
+    <ul class="nav-bar" style="display: flex; justify-content: space-between; align-items: center; padding: 10px 20px;">
+        <h3><a href="/Home/Index" style="color: var(--primary); text-decoration: none;">GymFlow</a></h3>
+
+        @if (User.Identity.IsAuthenticated)
+        {
+            <div style="display: flex; align-items: center; gap: 15px;">
+                <span style="color: var(--text);">Olá, @User.Identity.Name</span>
+                <a class="nav-link text-white button-geral button-inscrever" asp-controller="Perfil" asp-action="Index">Meu Perfil</a>
+                <a class="nav-link text-white button-geral button-entrar" asp-controller="Treinos" asp-action="Index">Treinos</a>
+                <a class="nav-link text-white button-geral button-inscrever" asp-controller="Usuarios" asp-action="Logout">Sair</a>
+            </div>
+        }
+        else
+        {
+            <div style="display: flex; gap: 10px;">
+                <a class="nav-link text-white button-geral button-inscrever" asp-controller="Usuarios" asp-action="Create">Cadastrar</a>
+                <a class="nav-link text-white button-geral button-entrar" asp-controller="Usuarios" asp-action="Login">Entrar</a>
+            </div>
+        }
+    </ul>
+
+    <div class="container">
+        <main role="main" class="pb-3">
+            @RenderBody()
+        </main>
+    </div>
+
+    <footer class="border-top footer text-muted">
+        <div class="container">
+            &copy; @DateTime.Now.Year - GymFlow
+            <a asp-area="" asp-controller="Home" asp-action="Index">Home</a>
+        </div>
+    </footer>
+
+    <script src="~/lib/jquery/dist/jquery.min.js"></script>
+    <script src="~/lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="~/js/site.js" asp-append-version="true"></script>
+    @await RenderSectionAsync("Scripts", required: false)
+</body>
+</html>

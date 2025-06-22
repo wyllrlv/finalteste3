@@ -1,0 +1,82 @@
+﻿@{
+    ViewData["Title"] = "Home Page";
+}
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" type="text/css" href="/css/index.css" />
+    <link rel="stylesheet" type="text/css" href="/css/root.css" />
+
+    <title>Gym Flow</title>
+</head>
+
+<body>
+
+    <!-- Botões nav -->
+    <section>
+        <nav>
+
+                </div>
+            </div>
+        </nav>
+    </section>
+
+    <section>
+        <main>
+
+
+            <div class="div-call-redirection">
+                <div class="logo-slogan-buttons">
+                    <h1>GymFlow</h1>
+                    <h5>O futuro do treino</h5>
+                    <button class="button-geral button-explorar"><a href="/Usuarios/Login">Explorar</a></button>
+                    <a href="@(User.Identity.IsAuthenticated ? "/Treinos/Create" : "/Usuarios/Login")"><button class="button-geral button-entrar">Criar Treino</button></a>
+
+                </div>
+
+                <div class="box-call-redirection"></div>
+            </div>
+
+            <div class="div-adicionado-recentemente">
+                <h2>Adicionado Recentemente</h2>
+                <div class="adicionado-recentemente-boxs">
+                    <div class="box-adicionado-recentemente"></div>
+                    <div class="box-adicionado-recentemente"></div>
+                    <div class="box-adicionado-recentemente"></div>
+                    <div class="box-adicionado-recentemente"></div>
+                    <div class="box-adicionado-recentemente"></div>
+                    <div class="box-adicionado-recentemente"></div>
+                </div>
+            </div>
+
+            <div class="div-treinos-mais-populares">
+                <h2>Treinos mais populares</h2>
+                <div class="treinos-mais-populares-boxs">
+                    <div class="box-treinos-mais-populares"></div>
+                    <div class="box-treinos-mais-populares"></div>
+                    <div class="box-treinos-mais-populares"></div>
+                    <div class="box-treinos-mais-populares"></div>
+                    <div class="box-treinos-mais-populares"></div>
+                    <div class="box-treinos-mais-populares"></div>
+                </div>
+            </div>
+
+            <div class="div-sua-melhor-versão">
+                <div class="box-sua-melhor-versão"></div>
+                <div class="span-button-sua-melhor-versão">
+                    <span>Sua melhor versão</span>
+                    <span>está aqui</span>
+
+                    <button class="button-geral button-explorar"><a href="explorar.html">Explorar</a></button>
+
+                </div>
+            </div>
+        </main>
+    </section>
+</body>
+
+</html>

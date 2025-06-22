@@ -1,0 +1,55 @@
+﻿@model puc_projeto_eixo_2.Models.Usuario
+
+@{
+    ViewData["Title"] = "Login";
+}
+
+<section>
+    <nav>
+        <div class="div-entrar-inscrever">
+            <div class="logo-gym">
+                <a href="/Home/Index"><h3>GymFlow</h3></a>
+            </div>
+        </div>
+    </nav>
+</section>
+<h4>Login</h4>
+<hr />
+<div class="row">
+    <div class="col-md-4">
+        <form asp-action="Login">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+
+            <div class="form-group">
+                <label asp-for="Email" class="control-label"></label>
+                <input asp-for="Email" class="form-control" />
+                <span asp-validation-for="Email" class="text-danger"></span>
+            </div>
+
+            <div class="form-group">
+                <label asp-for="Senha" class="control-label"></label>
+                <input asp-for="Senha" class="form-control" />
+                <span asp-validation-for="Senha" class="text-danger"></span>
+            </div>
+
+            <div class="div-acessar-fazer-cadastro">
+                <div class="form-group">
+                    <button type="submit" class="button-geral button-entrar">Acessar</button>
+                </div>
+
+                <div class="form-group">
+                    <button type="button" onclick="window.location.href='/Usuarios/Create' "class="button-geral button-inscrever">
+                        Fazer cadastro
+                    </button>
+                </div>
+            </div>
+
+
+        </form>
+        <h6>@ViewBag.Message</h6>
+    </div>
+</div>
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}
